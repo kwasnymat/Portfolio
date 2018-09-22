@@ -1,30 +1,31 @@
-const LiveReloadPlugin = require('webpack-livereload-plugin');
+var path = require('path');
+
 
 module.exports = {
-    entry : {
-        'js/out.js': ['./src/js/app.js'],
+    entry: "./js/app.jsx",
+    output: {
+        filename: "out.js",
+        path: path.resolve(__dirname, 'js')
     },
-    output : {
-        path: __dirname+'/',
-        filename: '[name]'
+    devServer: {
+        inline: true,
+        contentBase: './',
+        port: 3001
     },
+    mode: 'development',
     watch: true,
-    devtool: 'eval-source-map',
-
     module: {
-        loaders:[
+        rules: [
             {
-                test:/\.js$/,
+                test: /\.jsx$/,
                 exclude: /node_modules/,
-                loader: 'babel-loader',
-                query:{
-                    presets:['es2015']
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['es2015', 'stage-2', 'react']
+                    }
                 }
             }
-        ],
-    },
-    plugins: [
-        new LiveReloadPlugin()
-    ]
-
+        ]
+    }
 }
