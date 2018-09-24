@@ -31,7 +31,7 @@ class Navigation extends React.Component {
                         <Link to="/">O MNIE</Link>
                     </li>
                     <li>
-                        <Link to="/">UMIEJĘTNOŚCI</Link>
+                        <Link to="/skills">UMIEJĘTNOŚCI</Link>
                     </li>
                     <li>
                         <Link to="/contact">KONTAKT</Link>
@@ -87,6 +87,24 @@ class Contact extends React.Component {
     }
 }
 
+class Skills extends React.Component {
+    render() {
+        return(
+            <div id="skills">
+                <h1>Skills</h1>
+                <div id="gridSkills">
+                    <div id="html"><i className="fab fa-html5"></i></div>
+                    <div id="css"><i className="fab fa-css3-alt"></i></div>
+                    <div id="js"><i className="fab fa-js"></i></div>
+                    <div id="react"><i className="fab fa-react"></i></div>
+                    <div id="sass"><i className="fab fa-sass"></i></div>
+                    <div id="git"><i className="fab fa-git"></i></div>
+                </div>
+            </div>
+        )
+    }
+}
+
 class NotFound extends React.Component {
     render() {
         return <h1>404, Nothing is here</h1>;
@@ -100,6 +118,7 @@ class App extends React.Component {
                 <Route path='/' component={Template}>
                     <IndexRoute component={Main} />
                     <Route path='/contact' component={Contact} />
+                    <Route path='/skills' component={Skills} />
                     <Route path='*' component={NotFound} />
                 </Route>
             </Router>

@@ -11,7 +11,6 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    color: #0e2c60;
 }
 
 #navigation ul li {
@@ -54,4 +53,38 @@
     margin-top: 10px;
 }
 
-#2f324d
+#skills {
+    color: #0e2c60;
+}
+
+#skills h1 {
+    font-weight: lighter;
+    font-size: 6vh;
+}
+
+#gridSkills {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 38vh 38vh;
+    grid-template-areas: "html css js"
+                        "react sass git";
+}
+
+#gridSkills div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#gridSkills div i {
+    font-size: 20vh;
+}
+
+#gridSkills div i:hover {
+    transition: 1s;
+    transform: rotate(360deg);
+}
+
+
+
+
