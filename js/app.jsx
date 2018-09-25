@@ -82,8 +82,35 @@ class Sentence extends React.Component {
 }
 
 class Contact extends React.Component {
+
     render() {
-        return <h1>Zapraszam do kontaktu</h1>;
+        return (
+            <div id="contact">
+                <h1>Zapraszam do kontaktu</h1>
+                <div id="gridContact">
+                    <div id="mail">
+                        <a href="mailto:kwasnymat@gmail.com">
+                            <i className="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                    <div id="linkedin">
+                        <a href="https://linkedin.com/in/mateuszkwasny">
+                            <i className="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                    <div id="github">
+                        <a href="https://github.com/kwasnymat">
+                            <i className="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <div id="phone">
+                        <a href="tel: +48668262331">
+                            <i className="fas fa-phone"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        )
     }
 }
 
@@ -93,12 +120,30 @@ class Skills extends React.Component {
             <div id="skills">
                 <h1>Skills</h1>
                 <div id="gridSkills">
-                    <div id="html"><i className="fab fa-html5"></i></div>
-                    <div id="css"><i className="fab fa-css3-alt"></i></div>
-                    <div id="js"><i className="fab fa-js"></i></div>
-                    <div id="react"><i className="fab fa-react"></i></div>
-                    <div id="sass"><i className="fab fa-sass"></i></div>
-                    <div id="git"><i className="fab fa-git"></i></div>
+                    <div id="html">
+                        <i className="fab fa-html5"></i>
+                        <p>HTML5</p>
+                    </div>
+                    <div id="css">
+                        <i className="fab fa-css3-alt"></i>
+                        <p>CSS3</p>
+                    </div>
+                    <div id="js">
+                        <i className="fab fa-js"></i>
+                        <p>JavaScript + ES6</p>
+                    </div>
+                    <div id="react">
+                        <i className="fab fa-react"></i>
+                        <p>React</p>
+                    </div>
+                    <div id="sass">
+                        <i className="fab fa-sass"></i>
+                        <p>Sass</p>
+                    </div>
+                    <div id="git">
+                        <i className="fab fa-git"></i>
+                        <p>Git</p>
+                    </div>
                 </div>
             </div>
         )

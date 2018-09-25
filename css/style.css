@@ -74,6 +74,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
 #gridSkills div i {
@@ -81,10 +82,39 @@
 }
 
 #gridSkills div i:hover {
-    transition: 1s;
+    transition: 1.5s;
     transform: rotate(360deg);
+    color: #1ca1f2;
 }
 
+#gridSkills div p {
+    margin-top: 1vh;
+    font-size: 3.5vh;
+}
 
+#contact {
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+}
 
+#gridContact {
+    display: grid;
+    grid-auto-columns: 25% 25% 25% 25%;
+    grid-template-rows: 50vh;
+    grid-template-areas: "mail linkedin github phone";
+}
+
+#gridContact div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#gridContact div i {
+    font-size: 20vh;
+}
 
