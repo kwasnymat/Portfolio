@@ -16,10 +16,15 @@ class Template extends React.Component {
     }
 }
 class Navigation extends React.Component {
+    handleClick = () => {
+
+    };
+
+
     render (){
         return (
             <div id="navigation">
-                <h1>Mateusz Kwasny</h1>
+                <div id="logo"></div>
                 <ul>
                     <li>
                         <Link to="/">HOME</Link>
@@ -37,6 +42,9 @@ class Navigation extends React.Component {
                         <Link to="/contact">KONTAKT</Link>
                     </li>
                 </ul>
+                <div id="menu">
+                    <i className="fas fa-bars"></i>
+                </div>
             </div>
         )
     }
@@ -86,7 +94,6 @@ class Contact extends React.Component {
     render() {
         return (
             <div id="contact">
-                <h1>Zapraszam do kontaktu</h1>
                 <div id="gridContact">
                     <div id="mail">
                         <a href="mailto:kwasnymat@gmail.com">

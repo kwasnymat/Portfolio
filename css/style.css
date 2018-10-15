@@ -5,12 +5,19 @@
     font-family: 'Roboto Slab', serif;
 }
 
+
 #navigation {
     height: 15vh;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    margin-right: 5vh;
+    margin-left: 5vh;
+}
+
+#navigation ul {
+    display: none;
 }
 
 #navigation ul li {
@@ -21,8 +28,21 @@
 
 #navigation ul li a {
     text-decoration: none;
-    color: #0e2c60;
+    color: black;
     font-weight: bold;
+}
+
+#navigation #logo {
+    background-image: url("../images/Mateusz Kwasny (1).jpg");
+    width: 30vh;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#navigation #menu {
+    font-size: 10vh;
 }
 
 #home {
@@ -35,10 +55,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+
 }
 
 #home p {
-    color: white;
+    color: #ffff00;
     margin-left: 50px;
 }
 
@@ -54,7 +75,12 @@
 }
 
 #skills {
-    color: #0e2c60;
+    color: #ffff00;
+    height: 85vh;
+    background-image: url("../images/home.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 #skills h1 {
@@ -82,22 +108,30 @@
 }
 
 #gridSkills div i:hover {
-    transition: 1.5s;
-    transform: rotate(360deg);
-    color: #1ca1f2;
+    color: transparent;
+    -webkit-text-stroke: 2px #ffff00;
 }
 
 #gridSkills div p {
     margin-top: 1vh;
     font-size: 3.5vh;
 }
+#gridSkills div p:hover {
+    margin-top: 1vh;
+    font-size: 3.5vh;
+}
 
 #contact {
+    background-image: url("../images/home.jpg");
     height: 85vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: stretch;
+}
+
+#contact h1 {
+    color: #ffff00;
 }
 
 #gridContact {
@@ -116,5 +150,11 @@
 
 #gridContact div i {
     font-size: 20vh;
+    text-decoration: none;
+    color: #ffff00;
 }
 
+#gridContact div i:hover {
+    color: transparent;
+    -webkit-text-stroke: 2px #ffff00;
+}
