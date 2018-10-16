@@ -16,12 +16,49 @@ class Template extends React.Component {
     }
 }
 class Navigation extends React.Component {
-    handleClick = () => {
+    constructor(props) {
+        super(props);
+        this.state = {
+            active: false,
+        }
+    }
 
+    toggleClass = () => {
+        const currentState = this.state.active;
+        this.setState({
+            active: !currentState
+        });
+    };
+
+    handleClickBox = () => {
+        this.toggleClass();
     };
 
 
     render (){
+        const isActive = this.state.active;
+        let content;
+        if (isActive){
+            content = <NavigationList clickMethod={this.handleClickBox}  />
+        } else {
+            content = <NavigationHidden clickMethod={this.handleClickBox} />
+        }
+        return (
+            <div>
+                {content}
+            </div>
+        )
+    }
+}
+
+class NavigationList extends React.Component {
+    handleStartClick = () => {
+        if ( typeof this.props.clickMethod === 'function' ){
+            this.props.clickMethod();
+        }
+    };
+
+    render(){
         return (
             <div id="navigation">
                 <div id="logo"></div>
@@ -43,7 +80,27 @@ class Navigation extends React.Component {
                     </li>
                 </ul>
                 <div id="menu">
-                    <i className="fas fa-bars"></i>
+                    <i className="fas fa-bars" onClick={this.handleStartClick}></i>
+                </div>
+            </div>
+        )
+    }
+}
+
+class NavigationHidden extends React.Component {
+
+    handleStartClick = () => {
+        if ( typeof this.props.clickMethod === 'function' ){
+            this.props.clickMethod();
+        }
+    };
+
+    render () {
+        return (
+            <div id="navigation">
+                <div id="logo"></div>
+                <div id="menu">
+                    <i className="fas fa-bars" onClick={this.handleStartClick}></i>
                 </div>
             </div>
         )

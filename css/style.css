@@ -16,10 +16,6 @@
     margin-left: 5vh;
 }
 
-#navigation ul {
-    display: none;
-}
-
 #navigation ul li {
     display: inline-block;
     margin: 2vh;
@@ -59,7 +55,7 @@
 }
 
 #home p {
-    color: #ffff00;
+    color: #f5f6fa;
     margin-left: 50px;
 }
 
@@ -75,7 +71,7 @@
 }
 
 #skills {
-    color: #ffff00;
+    color: #f5f6fa;
     height: 85vh;
     background-image: url("../images/home.jpg");
     background-position: center;
@@ -109,7 +105,7 @@
 
 #gridSkills div i:hover {
     color: transparent;
-    -webkit-text-stroke: 2px #ffff00;
+    -webkit-text-stroke: 2px #f5f6fa;
 }
 
 #gridSkills div p {
@@ -131,7 +127,7 @@
 }
 
 #contact h1 {
-    color: #ffff00;
+    color: #f5f6fa;
 }
 
 #gridContact {
@@ -151,10 +147,11 @@
 #gridContact div i {
     font-size: 20vh;
     text-decoration: none;
-    color: #ffff00;
+    color: #f5f6fa;
 }
 
 #gridContact div i:hover {
     color: transparent;
-    -webkit-text-stroke: 2px #ffff00;
+    -webkit-text-stroke: 2px #f5f6fa;
+    transition: 1s;
 }
