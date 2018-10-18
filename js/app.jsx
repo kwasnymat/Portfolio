@@ -7,6 +7,7 @@ import { Router,
     hashHistory
 } from 'react-router';
 
+
 class Template extends React.Component {
     render() {
         return <div>
@@ -24,9 +25,8 @@ class Navigation extends React.Component {
     }
 
     toggleClass = () => {
-        const currentState = this.state.active;
         this.setState({
-            active: !currentState
+            active: !this.state.active
         });
     };
 
@@ -35,39 +35,39 @@ class Navigation extends React.Component {
     };
 
 
-    render (){
+    render () {
         const isActive = this.state.active;
-        let content;
-        if (isActive){
-            content = <NavigationList clickMethod={this.handleClickBox}  />
+        if (!isActive){
+            return (
+                <div id="navigation">
+                    <div id="logo"></div>
+                    <HamburgerMenu isActive={isActive} clickMethod={this.handleClickBox} />
+                </div>
+            );
         } else {
-            content = <NavigationHidden clickMethod={this.handleClickBox} />
+            return (
+                <div id="navigation">
+                    <div id="logo"></div>
+                    <MenuList />
+                    <HamburgerMenu isActive={isActive} clickMethod={this.handleClickBox}/>
+                </div>
+            );
         }
-        return (
-            <div>
-                {content}
-            </div>
-        )
     }
 }
 
-class NavigationList extends React.Component {
-    handleStartClick = () => {
-        if ( typeof this.props.clickMethod === 'function' ){
-            this.props.clickMethod();
-        }
-    };
 
+
+class MenuList extends React.Component {
     render(){
         return (
             <div id="navigation">
-                <div id="logo"></div>
                 <ul>
                     <li>
                         <Link to="/">HOME</Link>
                     </li>
                     <li>
-                        <Link to="/">PROJEKTY</Link>
+                        <Link to="/projects">PROJEKTY</Link>
                     </li>
                     <li>
                         <Link to="/">O MNIE</Link>
@@ -79,31 +79,16 @@ class NavigationList extends React.Component {
                         <Link to="/contact">KONTAKT</Link>
                     </li>
                 </ul>
-                <div id="menu">
-                    <i className="fas fa-bars" onClick={this.handleStartClick}></i>
-                </div>
             </div>
         )
     }
 }
 
-class NavigationHidden extends React.Component {
-
-    handleStartClick = () => {
-        if ( typeof this.props.clickMethod === 'function' ){
-            this.props.clickMethod();
-        }
-    };
-
+class HamburgerMenu extends React.Component {
+    handleClick = () => this.props.clickMethod();
     render () {
-        return (
-            <div id="navigation">
-                <div id="logo"></div>
-                <div id="menu">
-                    <i className="fas fa-bars" onClick={this.handleStartClick}></i>
-                </div>
-            </div>
-        )
+        return !this.props.isActive ? <div id="menu"><i className="fas fa-bars" onClick={this.handleClick}></i></div> :
+                <div id="menu"><i className="fas fa-times" onClick={this.handleClick}></i></div>
     }
 }
 
@@ -182,7 +167,6 @@ class Skills extends React.Component {
     render() {
         return(
             <div id="skills">
-                <h1>Skills</h1>
                 <div id="gridSkills">
                     <div id="html">
                         <i className="fab fa-html5"></i>
@@ -214,6 +198,17 @@ class Skills extends React.Component {
     }
 }
 
+class Projects extends React.Component {
+    render (){
+        return (
+            <div>
+                Mateusz
+            </div>
+        )
+    }
+}
+
+
 class NotFound extends React.Component {
     render() {
         return <h1>404, Nothing is here</h1>;
@@ -227,6 +222,7 @@ class App extends React.Component {
                 <Route path='/' component={Template}>
                     <IndexRoute component={Main} />
                     <Route path='/contact' component={Contact} />
+                    <Route path='/projects' component={Projects} />
                     <Route path='/skills' component={Skills} />
                     <Route path='*' component={NotFound} />
                 </Route>

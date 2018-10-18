@@ -79,15 +79,11 @@
     background-repeat: no-repeat;
 }
 
-#skills h1 {
-    font-weight: lighter;
-    font-size: 6vh;
-}
 
 #gridSkills {
     display: grid;
     grid-template-columns: 33% 33% 33%;
-    grid-template-rows: 38vh 38vh;
+    grid-template-rows: 42.5vh 42.5vh;
     grid-template-areas: "html css js"
                         "react sass git";
 }
@@ -119,6 +115,9 @@
 
 #contact {
     background-image: url("../images/home.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     height: 85vh;
     display: flex;
     flex-direction: column;
